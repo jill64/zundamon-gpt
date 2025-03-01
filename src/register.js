@@ -1,11 +1,17 @@
-import commands from "../src/commands.json" with { type: "json" };
-import "dotenv/config.js";
-import { env } from "node:process";
+import { AWW_COMMAND, INVITE_COMMAND } from "./commands.js";
+import dotenv from "dotenv";
+import process from "node:process";
 
-const token = env.DISCORD_TOKEN;
-const applicationId = env.DISCORD_APPLICATION_ID;
+/**
+ * This file is meant to be run from the command line, and is not used by the
+ * application server.  It's allowed to use node.js primitives, and only needs
+ * to be run once.
+ */
 
-console.log("Registering commands with token:", applicationId, token);
+dotenv.config({ path: ".dev.vars" });
+
+const token = process.env.DISCORD_TOKEN;
+const applicationId = process.env.DISCORD_APPLICATION_ID;
 
 if (!token) {
   throw new Error("The DISCORD_TOKEN environment variable is required.");
@@ -28,7 +34,7 @@ const response = await fetch(url, {
     Authorization: `Bot ${token}`,
   },
   method: "PUT",
-  body: JSON.stringify([...Object.values(commands)]),
+  body: JSON.stringify([AWW_COMMAND, INVITE_COMMAND]),
 });
 
 if (response.ok) {

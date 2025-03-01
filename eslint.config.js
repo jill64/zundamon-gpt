@@ -1,6 +1,15 @@
-import { tsConfig } from "@jill64/eslint-config-ts";
+import prettier from "eslint-plugin-prettier/recommended";
+import js from "@eslint/js";
+import globals from "globals";
 
-/** @type {import('@jill64/eslint-config-ts').FlatConfig[]} */
-export default tsConfig({
-  tsConfigPath: "./eslint.tsconfig.json",
-});
+export default [
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+  },
+  js.configs.recommended,
+  prettier,
+];
