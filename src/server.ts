@@ -118,7 +118,7 @@ async function handleDeferredInteractionStreamly(
   await fetch(endpoint, {
     method: 'POST',
     body: JSON.stringify({
-      content: res.content
+      content: `Q. ${message}\nA. ${res.content}`
     }),
     headers: {
       'Content-Type': 'application/json'
