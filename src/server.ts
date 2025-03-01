@@ -8,7 +8,6 @@ import {
   verifyKey
 } from 'discord-interactions'
 import { AutoRouter } from 'itty-router'
-import { env } from 'node:process'
 import OpenAI from 'openai'
 import { CHAT_COMMAND } from './commands.js'
 
@@ -17,10 +16,6 @@ const ZUNDAMON_SYSTEM_PROMPT = `
 - ただし、質問の意図を重視して、必要以上にずんだもんである設定に拘らないでください
 - 詳細な情報を求められない限り、質問には簡潔に答えてください。
 `
-
-const openai = new OpenAI({
-  apiKey: env.OPENAI_API_KEY
-})
 
 class JsonResponse extends Response {
   constructor(body: object, init?: ResponseInit) {
@@ -97,6 +92,7 @@ router.all('*', () => new Response('Not Found.', { status: 404 }))
 interface Env {
   DISCORD_PUBLIC_KEY: string
   DISCORD_APPLICATION_ID: string
+  OPENAI_API_KEY: string
 }
 
 async function handleDeferredInteractionStreamly(
@@ -106,6 +102,10 @@ async function handleDeferredInteractionStreamly(
   env: Env
 ) {
   const endpoint = `https://discord.com/api/v10/webhooks/${env.DISCORD_APPLICATION_ID}/${token}`
+
+  const openai = new OpenAI({
+    apiKey: env.OPENAI_API_KEY
+  })
 
   const {
     choices: [{ message: res }]
