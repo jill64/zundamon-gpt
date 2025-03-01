@@ -2,7 +2,7 @@ import commands from "../src/commands.json" with { type: "json" };
 import "dotenv/config.js";
 import { env } from "node:process";
 
-const token = env.DISCORD_TOKEN;
+const token = env.DISCORD_BOT_TOKEN;
 const applicationId = env.DISCORD_APPLICATION_ID;
 
 console.log("Registering commands with token:", applicationId, token);
