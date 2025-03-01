@@ -7,10 +7,12 @@
     "format": "npx prettier -w ."
   },
   "devDependencies": {
+    "@jill64/eslint-config-ts": "2.0.13",
     "@cloudflare/workers-types": "4.20250224.0",
     "discord-api-types": "0.37.119",
     "dotenv": "16.4.7",
-    "@types/node": "22.13.8"
+    "@types/node": "22.13.8",
+    "eslint": "9.21.0"
   },
   "dependencies": {
     "discord-interactions": "4.1.1",

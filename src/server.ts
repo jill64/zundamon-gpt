@@ -7,7 +7,7 @@ import {
 import { DeferredChannelMessageResponse, Env } from './types.js';
 
 export default {
-  async fetch(request: Request, env: Env, ctx: unknown) {
+  async fetch(request: Request, env: Env) {
     if (request.method === 'GET') {
       return new Response(`👋 ${env.DISCORD_APPLICATION_ID}`)
     }
