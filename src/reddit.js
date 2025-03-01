@@ -7,7 +7,7 @@
 export async function getCuteUrl() {
   const response = await fetch(redditUrl, {
     headers: {
-      'User-Agent': 'justinbeckwith:awwbot:v1.0.0 (by /u/justinblat)',
+      "User-Agent": "justinbeckwith:awwbot:v1.0.0 (by /u/justinblat)",
     },
   });
   if (!response.ok) {
@@ -26,7 +26,7 @@ export async function getCuteUrl() {
   const posts = data.data.children
     .map((post) => {
       if (post.is_gallery) {
-        return '';
+        return "";
       }
       return (
         post.data?.media?.reddit_video?.fallback_url ||
@@ -40,4 +40,4 @@ export async function getCuteUrl() {
   return randomPost;
 }
 
-export const redditUrl = 'https://www.reddit.com/r/aww/hot.json';
+export const redditUrl = "https://www.reddit.com/r/aww/hot.json";
