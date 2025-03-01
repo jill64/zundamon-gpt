@@ -1,4 +1,4 @@
 name = "zundamon-gpt"
-main = "src/server.js"
+main = "src/server.ts"
 compatibility_flags = [ "nodejs_compat" ]
 compatibility_date = "2025-03-01"
