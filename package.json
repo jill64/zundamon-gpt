@@ -1,9 +1,9 @@
 {
   "type": "module",
   "scripts": {
-    "build": "wrangler deploy --dry-run",
+    "register": "npx tsx src/register.ts",
+    "build": "npm run register && wrangler deploy --dry-run",
     "lint": "eslint .",
-    "register": "node src/register.js",
     "format": "prettier --write ."
   },
   "dependencies": {
