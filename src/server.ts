@@ -17,18 +17,6 @@ const ZUNDAMON_SYSTEM_PROMPT = `
 - 詳細な情報を求められない限り、質問には簡潔に答えてください。
 `
 
-class JsonResponse extends Response {
-  constructor(body: object, init?: ResponseInit) {
-    const jsonBody = JSON.stringify(body)
-    init = init || {
-      headers: {
-        'content-type': 'application/json;charset=UTF-8'
-      }
-    }
-    super(jsonBody, init)
-  }
-}
-
 const router = AutoRouter()
 
 /**
@@ -55,7 +43,7 @@ router.post('/', async (request, env, ctx) => {
   if (interaction.type === InteractionType.PING) {
     // The `PING` message is used during the initial webhook handshake, and is
     // required to configure the webhook in the developer portal.
-    return new JsonResponse({
+    return Response.json({
       type: InteractionResponseType.PONG
     })
   }
@@ -64,7 +52,11 @@ router.post('/', async (request, env, ctx) => {
     // Most user commands will come as `APPLICATION_COMMAND`.
     switch (interaction.data.name.toLowerCase()) {
       case CHAT_COMMAND.name.toLowerCase(): {
-        const message = interaction.data.options[0].value as string
+        // extract message from interaction
+        const message = interaction.data.options.find(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (opt: any) => opt.name === 'input'
+        )?.value as string
 
         ctx.waitUntil(
           handleDeferredInteractionStreamly(
@@ -75,16 +67,16 @@ router.post('/', async (request, env, ctx) => {
           )
         )
 
-        return new JsonResponse({
+        return Response.json({
           type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE
         })
       }
       default:
-        return new JsonResponse({ error: 'Unknown Type' }, { status: 400 })
+        return Response.json({ error: 'Unknown Type' }, { status: 400 })
     }
   }
 
-  return new JsonResponse({ error: 'Unknown Type' }, { status: 400 })
+  return Response.json({ error: 'Unknown Type' }, { status: 400 })
 })
 
 router.all('*', () => new Response('Not Found.', { status: 404 }))
