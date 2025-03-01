@@ -1,5 +1,9 @@
 lockfileVersion: '9.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -21,16 +25,16 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       dotenv:
-        specifier: ^16.0.3
+        specifier: 16.4.7
         version: 16.4.7
       eslint:
-        specifier: ^9.1.0
+        specifier: 9.21.0
         version: 9.21.0
       prettier:
         specifier: 3.5.2
         version: 3.5.2
       wrangler:
-        specifier: ^3.0.1
+        specifier: 3.111.0
         version: 3.111.0
 
 packages:
