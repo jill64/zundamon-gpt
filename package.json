@@ -15,7 +15,7 @@
     "chai": "5.2.0",
     "dotenv": "16.4.7",
     "eslint": "9.21.0",
-    "eslint-config-prettier": "9.1.0",
+    "eslint-config-prettier": "10.0.2",
     "eslint-plugin-prettier": "5.2.3",
     "globals": "15.15.0",
     "sinon": "19.0.2",
