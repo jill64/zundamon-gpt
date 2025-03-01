@@ -26,18 +26,6 @@ importers:
       eslint:
         specifier: ^9.1.0
         version: 9.21.0
-<<<<<<< HEAD
-=======
-      eslint-config-prettier:
-        specifier: 10.0.2
-        version: 10.0.2(eslint@9.21.0)
-      eslint-plugin-prettier:
-        specifier: 5.2.3
-        version: 5.2.3(eslint-config-prettier@10.0.2(eslint@9.21.0))(eslint@9.21.0)(prettier@3.5.2)
-      globals:
-        specifier: 16.0.0
-        version: 16.0.0
->>>>>>> origin/main
       prettier:
         specifier: 3.5.2
         version: 3.5.2
@@ -714,14 +702,8 @@ packages:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
 
-<<<<<<< HEAD
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
-=======
-  globals@16.0.0:
-    resolution: {integrity: sha512-iInW14XItCXET01CQFqudPOWP2jYMl7T+QRQT+UNcR/iQncN/F0UNpgd76iFkBPgNQb4+X3LV9tLJYzwh+Gl3A==}
-    engines: {node: '>=18'}
->>>>>>> origin/main
 
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
@@ -1660,11 +1642,7 @@ snapshots:
 
   globals@14.0.0: {}
 
-<<<<<<< HEAD
   graphemer@1.4.0: {}
-=======
-  globals@16.0.0: {}
->>>>>>> origin/main
 
   has-flag@4.0.0: {}
 
