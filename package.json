@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "scripts": {
+    "build:cmd": "npx tsx scripts/builder.ts",
+    "register": "npx tsx scripts/register.ts",
+    "lint": "npx eslint .",
+    "format": "npx prettier -w ."
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20250224.0",
+    "discord-api-types": "0.37.119",
+    "dotenv": "16.4.7",
+    "@types/node": "22.13.8"
+  },
+  "dependencies": {
+    "discord-interactions": "4.1.1",
+    "discord.js": "14.18.0"
+  }
+}
