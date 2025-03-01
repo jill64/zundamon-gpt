@@ -6,11 +6,6 @@
     "lint": "eslint .",
     "format": "prettier --write ."
   },
-  "dependencies": {
-    "discord-interactions": "4.1.1",
-    "itty-router": "5.0.18",
-    "@types/node": "22.13.8"
-  },
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
     "@jill64/prettier-config": "1.0.0",
@@ -18,6 +13,12 @@
     "dotenv": "16.4.7",
     "eslint": "9.21.0",
     "wrangler": "3.111.0",
-    "prettier": "3.5.2"
+    "prettier": "3.5.2",
+    "@types/node": "22.13.8"
+  },
+  "dependencies": {
+    "discord-interactions": "4.1.1",
+    "itty-router": "5.0.18",
+    "openai": "4.86.1"
   }
 }
