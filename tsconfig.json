@@ -5,8 +5,8 @@
     "outDir": "dist",
     "strict": true,
     "declaration": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true
   },
   "include": ["src"]
