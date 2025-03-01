@@ -9,7 +9,7 @@ import { CHAT_COMMAND } from './commands.js'
  */
 
 const token = env.DISCORD_BOT_TOKEN
-const applicationId = process.env.DISCORD_APPLICATION_ID
+const applicationId = env.DISCORD_APPLICATION_ID
 
 if (!token) {
   throw new Error('The DISCORD_TOKEN environment variable is required.')
