@@ -8,6 +8,7 @@ import {
   verifyKey
 } from 'discord-interactions'
 import { AutoRouter } from 'itty-router'
+import { env } from 'node:process'
 import OpenAI from 'openai'
 import { CHAT_COMMAND } from './commands.js'
 
@@ -18,7 +19,7 @@ const ZUNDAMON_SYSTEM_PROMPT = `
 `
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: env.OPENAI_API_KEY
 })
 
 class JsonResponse extends Response {
