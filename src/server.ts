@@ -8,7 +8,18 @@ import {
   verifyKey
 } from 'discord-interactions'
 import { AutoRouter } from 'itty-router'
+import OpenAI from 'openai'
 import { CHAT_COMMAND } from './commands.js'
+
+const ZUNDAMON_SYSTEM_PROMPT = `
+- あなたはVOICEROIDのずんだもんです。かわいい少女のずんだもんになりきって答えてください
+- ただし、質問の意図を重視して、必要以上にずんだもんである設定に拘らないでください
+- 詳細な情報を求められない限り、質問には簡潔に答えてください。
+`
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+})
 
 class JsonResponse extends Response {
   constructor(body: object, init?: ResponseInit) {
@@ -36,7 +47,7 @@ router.get('/', (_, env) => {
  * include a JSON payload described here:
  * https://discord.com/developers/docs/interactions/receiving-and-responding#interaction-object
  */
-router.post('/', async (request, env) => {
+router.post('/', async (request, env, ctx) => {
   const { isValid, interaction } = await server.verifyDiscordRequest(
     request,
     env
@@ -57,11 +68,19 @@ router.post('/', async (request, env) => {
     // Most user commands will come as `APPLICATION_COMMAND`.
     switch (interaction.data.name.toLowerCase()) {
       case CHAT_COMMAND.name.toLowerCase(): {
+        const message = interaction.data.options[0].value as string
+
+        ctx.waitUntil(
+          handleDeferredInteractionStreamly(
+            ZUNDAMON_SYSTEM_PROMPT,
+            message,
+            interaction.token,
+            env
+          )
+        )
+
         return new JsonResponse({
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: {
-            content: 'ずんだもんがなんの質問にも答えるよ'
-          }
+          type: InteractionResponseType.DEFERRED_CHANNEL_MESSAGE_WITH_SOURCE
         })
       }
       default:
@@ -69,13 +88,49 @@ router.post('/', async (request, env) => {
     }
   }
 
-  console.error('Unknown Type')
   return new JsonResponse({ error: 'Unknown Type' }, { status: 400 })
 })
+
 router.all('*', () => new Response('Not Found.', { status: 404 }))
 
 interface Env {
   DISCORD_PUBLIC_KEY: string
+  DISCORD_APPLICATION_ID: string
+}
+
+async function handleDeferredInteractionStreamly(
+  system: string,
+  message: string,
+  token: string,
+  env: Env
+) {
+  const endpoint = `https://discord.com/api/v10/webhooks/${env.DISCORD_APPLICATION_ID}/${token}`
+
+  const {
+    choices: [{ message: res }]
+  } = await openai.chat.completions.create({
+    messages: [
+      {
+        role: 'system',
+        content: system
+      },
+      {
+        role: 'user',
+        content: message
+      }
+    ],
+    model: 'gpt-4.5-preview'
+  })
+
+  await fetch(endpoint, {
+    method: 'POST',
+    body: JSON.stringify({
+      content: res.content
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
 }
 
 async function verifyDiscordRequest(request: Request, env: Env) {
