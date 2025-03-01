@@ -1,5 +1,5 @@
 import { InteractionResponseType, InteractionType } from "discord-interactions";
-import commands from "./commands.json" with { type: "json" };
+import commands from "./commands.json";
 import { createMessage, verifyDiscordRequest } from "./discord_helpers.js";
 import { DeferredChannelMessageResponse, Env } from "./types.js";
 
