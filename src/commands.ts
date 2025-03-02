@@ -3,7 +3,7 @@ export const CHAT_COMMAND = {
     {
       type: 3,
       name: 'input',
-      description: 'The text to send to the AI',
+      description: '質問文を入力してね',
       required: true
     }
   ],
