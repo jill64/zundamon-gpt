@@ -9,7 +9,7 @@
   "prettier": "@jill64/prettier-config",
   "devDependencies": {
     "@jill64/prettier-config": "1.0.0",
-    "@jill64/eslint-config-ts": "2.0.13",
+    "@jill64/eslint-config-ts": "2.0.14",
     "dotenv": "16.4.7",
     "eslint": "9.21.0",
     "wrangler": "3.111.0",
