@@ -15,8 +15,8 @@ importers:
         specifier: 5.0.18
         version: 5.0.18
       openai:
-        specifier: 4.86.1
-        version: 4.86.1(ws@8.18.0)
+        specifier: 4.86.2
+        version: 4.86.2(ws@8.18.0)
     devDependencies:
       '@jill64/eslint-config-ts':
         specifier: 2.0.14
@@ -939,8 +939,8 @@ packages:
   ohash@1.1.4:
     resolution: {integrity: sha512-FlDryZAahJmEF3VR3w1KogSEdWX3WhA5GPakFx4J81kEAiHyLMpdLLElS8n8dfNadMgAne/MywcvmogzscVt4g==}
 
-  openai@4.86.1:
-    resolution: {integrity: sha512-x3iCLyaC3yegFVZaxOmrYJjitKxZ9hpVbLi+ZlT5UHuHTMlEQEbKXkGOM78z9qm2T5GF+XRUZCP2/aV4UPFPJQ==}
+  openai@4.86.2:
+    resolution: {integrity: sha512-nvYeFjmjdSu6/msld+22JoUlCICNk/lUFpSMmc6KNhpeNLpqL70TqbD/8Vura/tFmYqHKW0trcjgPwUpKSPwaA==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -2019,7 +2019,7 @@ snapshots:
 
   ohash@1.1.4: {}
 
-  openai@4.86.1(ws@8.18.0):
+  openai@4.86.2(ws@8.18.0):
     dependencies:
       '@types/node': 18.19.78
       '@types/node-fetch': 2.6.12
