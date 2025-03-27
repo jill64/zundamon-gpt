@@ -12,7 +12,7 @@
     "@jill64/eslint-config-ts": "2.0.20",
     "dotenv": "16.4.7",
     "eslint": "9.23.0",
-    "wrangler": "4.5.0",
+    "wrangler": "4.5.1",
     "prettier": "3.5.3",
     "@types/node": "22.13.14"
   },
