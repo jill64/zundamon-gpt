@@ -25,8 +25,8 @@ importers:
         specifier: 1.0.0
         version: 1.0.0
       '@types/node':
-        specifier: 22.13.16
-        version: 22.13.16
+        specifier: 22.13.17
+        version: 22.13.17
       dotenv:
         specifier: 16.4.7
         version: 16.4.7
@@ -455,8 +455,8 @@ packages:
   '@types/node@18.19.78':
     resolution: {integrity: sha512-m1ilZCTwKLkk9rruBJXFeYN0Bc5SbjirwYX/Td3MqPfioYbgun3IvK/m8dQxMCnrPGZPg1kvXjp3SIekCN/ynw==}
 
-  '@types/node@22.13.16':
-    resolution: {integrity: sha512-15tM+qA4Ypml/N7kyRdvfRjBQT2RL461uF1Bldn06K0Nzn1lY3nAPgHlsVrJxdZ9WhZiW0Fmc1lOYMtDsAuB3w==}
+  '@types/node@22.13.17':
+    resolution: {integrity: sha512-nAJuQXoyPj04uLgu+obZcSmsfOenUg6DxPKogeUy6yNCFwWaj5sBF8/G/pNo8EtBJjAfSVgfIlugR/BCOleO+g==}
 
   '@typescript-eslint/eslint-plugin@8.29.0':
     resolution: {integrity: sha512-PAIpk/U7NIS6H7TEtN45SPGLQaHNgB7wSjsQV/8+KYokAb2T/gloOA/Bee2yd4/yKVhPKe5LlaUGhAZk5zmSaQ==}
@@ -1461,14 +1461,14 @@ snapshots:
 
   '@types/node-fetch@2.6.12':
     dependencies:
-      '@types/node': 22.13.16
+      '@types/node': 22.13.17
       form-data: 4.0.2
 
   '@types/node@18.19.78':
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@22.13.16':
+  '@types/node@22.13.17':
     dependencies:
       undici-types: 6.20.0
 
