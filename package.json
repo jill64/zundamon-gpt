@@ -19,6 +19,6 @@
   "dependencies": {
     "discord-interactions": "4.1.1",
     "itty-router": "5.0.18",
-    "openai": "4.95.1"
+    "openai": "4.96.0"
   }
 }
