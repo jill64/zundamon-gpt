@@ -14,7 +14,7 @@
     "eslint": "9.26.0",
     "wrangler": "4.14.1",
     "prettier": "3.5.3",
-    "@types/node": "22.15.3"
+    "@types/node": "22.15.8"
   },
   "dependencies": {
     "discord-interactions": "4.1.1",
