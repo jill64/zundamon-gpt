@@ -15,8 +15,8 @@ importers:
         specifier: 5.0.18
         version: 5.0.18
       openai:
-        specifier: 5.0.2
-        version: 5.0.2(ws@8.18.0)(zod@3.24.3)
+        specifier: 5.1.0
+        version: 5.1.0(ws@8.18.0)(zod@3.24.3)
     devDependencies:
       '@jill64/eslint-config-ts':
         specifier: 2.0.35
@@ -832,8 +832,8 @@ packages:
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
 
-  openai@5.0.2:
-    resolution: {integrity: sha512-NN7LAAImgBmd4RIe6WyRpLmwCbn+HQ1iaXeIG7K9DM3Auy/G2waKFhrDfRgaEeY0UUPnm6nohaCsqcS+zO8+2g==}
+  openai@5.1.0:
+    resolution: {integrity: sha512-YQBgPJykHrDOlngB/8QpOsFNg36yofBatpeDWg1zejl9R59/ELuN7AMPSU95ZIdChbKc/o5vg1UnBJ1OEB0IJA==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -1002,6 +1002,7 @@ packages:
   wrangler@4.19.0:
     resolution: {integrity: sha512-rqrqgZKBLff868vQHbIp3qxPNzsGzBx5hx5D6IaNTEQFbchYYSp2j4jT0ZmkGeBlJiJvnbS3N0FU4XmIbaUeog==}
     engines: {node: '>=18.0.0'}
+    deprecated: Errors with version upload. Please downgrade to 4.18.0
     hasBin: true
     peerDependencies:
       '@cloudflare/workers-types': ^4.20250525.0
@@ -1757,7 +1758,7 @@ snapshots:
 
   ohash@2.0.11: {}
 
-  openai@5.0.2(ws@8.18.0)(zod@3.24.3):
+  openai@5.1.0(ws@8.18.0)(zod@3.24.3):
     optionalDependencies:
       ws: 8.18.0
       zod: 3.24.3
